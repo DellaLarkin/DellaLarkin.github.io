@@ -80,51 +80,56 @@
         <div class="bk">Book Two <span class="pill">Coming soon</span></div>
         <h2>Things We Don’t Say</h2>
         <p class="hook">She is running with her son and nothing to spare. The town’s careful stranger gave her a name that is not his own.</p>
-        <!-- WHEN THIS BOOK IS LIVE: delete the <span class="pill">…</span> above, then add this block here:
-        <div class="btns"><a class="btn" href="https://www.amazon.com/dp/PUT_ASIN_HERE">Read free on Kindle Unlimited</a></div>
-        -->
+        <div class="btns">
+          <a class="btn ghost" href="things-we-dont-say-sample.html">Read a sample</a>
+        </div>
+        <!-- WHEN THIS BOOK IS LIVE: add this line just before the "Read a sample" link, and delete the "Coming soon" pill above:
+             <a class="btn" href="https://www.amazon.com/dp/PUT_ASIN_HERE">Read free on Kindle Unlimited</a> -->
       </article>
       <article class="card soon">
         <div class="bk">Book Three <span class="pill">Coming soon</span></div>
         <h2>The Long Way Back</h2>
         <p class="hook">She came home to bury her mother and leave clean. He has waited nineteen years for her to stay.</p>
-        <!-- WHEN THIS BOOK IS LIVE: delete the <span class="pill">…</span> above, then add this block here:
-        <div class="btns"><a class="btn" href="https://www.amazon.com/dp/PUT_ASIN_HERE">Read free on Kindle Unlimited</a></div>
-        -->
+        <div class="btns">
+          <a class="btn ghost" href="the-long-way-back-sample.html">Read a sample</a>
+        </div>
+        <!-- WHEN THIS BOOK IS LIVE: add this line just before the "Read a sample" link, and delete the "Coming soon" pill above:
+             <a class="btn" href="https://www.amazon.com/dp/PUT_ASIN_HERE">Read free on Kindle Unlimited</a> -->
       </article>
       <article class="card soon">
         <div class="bk">Book Four <span class="pill">Coming soon</span></div>
         <h2>Cold Open</h2>
         <p class="hook">A writer who notices everything lands in a town with something to hide, and a man who would rather she stopped looking.</p>
-        <!-- WHEN THIS BOOK IS LIVE: delete the <span class="pill">…</span> above, then add this block here:
-        <div class="btns"><a class="btn" href="https://www.amazon.com/dp/PUT_ASIN_HERE">Read free on Kindle Unlimited</a></div>
-        -->
+        <div class="btns">
+          <a class="btn ghost" href="cold-open-sample.html">Read a sample</a>
+        </div>
+        <!-- WHEN THIS BOOK IS LIVE: add this line just before the "Read a sample" link, and delete the "Coming soon" pill above:
+             <a class="btn" href="https://www.amazon.com/dp/PUT_ASIN_HERE">Read free on Kindle Unlimited</a> -->
       </article>
       <article class="card soon">
         <div class="bk">Book Five <span class="pill">Coming soon</span></div>
         <h2>What the Valley Keeps</h2>
         <p class="hook">The ex-agent working a nine-year cold case falls for the one man she was sent to find.</p>
-        <!-- WHEN THIS BOOK IS LIVE: delete the <span class="pill">…</span> above, then add this block here:
-        <div class="btns"><a class="btn" href="https://www.amazon.com/dp/PUT_ASIN_HERE">Read free on Kindle Unlimited</a></div>
-        -->
+        <div class="btns">
+          <a class="btn ghost" href="what-the-valley-keeps-sample.html">Read a sample</a>
+        </div>
+        <!-- WHEN THIS BOOK IS LIVE: add this line just before the "Read a sample" link, and delete the "Coming soon" pill above:
+             <a class="btn" href="https://www.amazon.com/dp/PUT_ASIN_HERE">Read free on Kindle Unlimited</a> -->
       </article>
     </section>
     <footer>Della Larkin &middot; Marblemount &middot; 18+</footer>
   </main>
-
-  <!-- ANALYTICS: GoatCounter (free, privacy-friendly, no cookie banner).
-       SETUP: 1) go to https://www.goatcounter.com and sign up, claiming the code "dellalarkin".
-              2) If "dellalarkin" is taken, pick another code and change it in BOTH files on the data-goatcounter line below. -->
-  <script data-goatcounter="https://dellalarkin.goatcounter.com/count"
-          async src="//gc.zgo.at/count.js"></script>
+  <!-- ANALYTICS: GoatCounter (same account/code as the sample pages). -->
+  <script data-goatcounter="https://dellalarkin.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script>
     (function(){
-      function track(name){ if(window.goatcounter && window.goatcounter.count){ window.goatcounter.count({path:name, title:name, event:true}); } }
+      function track(n){ if(window.goatcounter && window.goatcounter.count){ window.goatcounter.count({path:n, title:n, event:true}); } }
+      var S={'one-floor-up-sample':'b1','things-we-dont-say-sample':'b2','the-long-way-back-sample':'b3','cold-open-sample':'b4','what-the-valley-keeps-sample':'b5'};
       document.addEventListener('click', function(e){
-        var a = e.target.closest('a'); if(!a) return;
-        var href = a.getAttribute('href') || '';
-        if(href.indexOf('amazon.') > -1)                  track('ku-click-hub');
-        else if(href.indexOf('one-floor-up-sample') > -1) track('sample-click-hub');
+        var a=e.target.closest('a'); if(!a) return;
+        var h=a.getAttribute('href')||'';
+        if(h.indexOf('amazon.')>-1){ track('ku-click-b1'); return; }
+        for(var k in S){ if(h.indexOf(k)>-1){ track('sample-click-'+S[k]); return; } }
       });
     })();
   </script>

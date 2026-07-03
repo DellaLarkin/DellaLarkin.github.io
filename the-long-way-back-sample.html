@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Long Way Back &middot; An Excerpt &middot; Della Larkin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@500;600&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-top:#101927; --bg-bot:#05080c; --ink:#e9e3d6; --ink-soft:#a9b0bb;
+    --amber:#c9a468; --amber-deep:#b6893f; --line:rgba(201,164,104,.35);
+    --serif:'EB Garamond',Georgia,serif; --display:'Playfair Display',Georgia,serif;
+    --sans:'Montserrat',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; color:var(--ink); font-family:var(--serif);
+    background:
+      radial-gradient(60% 45% at 62% 82%, rgba(201,134,58,.16), transparent 60%),
+      radial-gradient(50% 40% at 18% 12%, rgba(60,90,120,.14), transparent 60%),
+      linear-gradient(180deg,var(--bg-top),var(--bg-bot) 90%);
+    background-attachment:fixed; min-height:100vh;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  a{color:inherit}
+  /* top bar */
+  .topbar{
+    position:sticky; top:0; z-index:40; display:flex; align-items:center; justify-content:space-between;
+    gap:12px; padding:12px 18px; backdrop-filter:blur(8px);
+    background:rgba(8,12,18,.72); border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .brand{font-family:var(--sans); font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+    font-size:.7rem; color:var(--amber)}
+  .brand small{display:block; color:var(--ink-soft); letter-spacing:.14em; font-weight:500; font-size:.62rem}
+  .btn{
+    display:inline-block; font-family:var(--sans); font-weight:600; letter-spacing:.04em;
+    text-decoration:none; cursor:pointer; border:none; border-radius:999px;
+    padding:11px 20px; font-size:.82rem; line-height:1;
+    color:#1a1206; background:linear-gradient(180deg,#dcb877,#c9a468);
+    box-shadow:0 6px 18px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.35);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px); box-shadow:0 9px 22px rgba(0,0,0,.45)}
+  .btn.small{padding:9px 15px; font-size:.72rem}
+  .btn.ghost{background:transparent; color:var(--amber); border:1px solid var(--line); box-shadow:none}
+  /* layout */
+  .wrap{max-width:690px; margin:0 auto; padding:0 22px 90px}
+  .hero{text-align:center; padding:54px 0 10px}
+  .label{font-family:var(--sans); font-weight:600; letter-spacing:.34em; text-transform:uppercase;
+    font-size:.66rem; color:var(--amber)}
+  .rule{width:56px; height:1px; background:var(--line); margin:16px auto}
+  h1{font-family:var(--display); font-weight:600; font-size:clamp(2.4rem,9vw,3.6rem);
+    margin:.15em 0 .1em; letter-spacing:.01em; color:#f2ecdf}
+  .tag{font-family:var(--serif); font-style:italic; color:var(--ink-soft); font-size:1.05rem; margin:0}
+  .chapter{font-family:var(--sans); font-weight:500; letter-spacing:.28em; text-transform:uppercase;
+    font-size:.64rem; color:var(--amber); margin-top:26px}
+  .setup{font-family:var(--serif); font-style:italic; color:var(--ink-soft);
+    text-align:center; font-size:1.06rem; line-height:1.7; max-width:33em; margin:18px auto 6px}
+  .dot{color:var(--amber); text-align:center; margin:22px 0 8px; font-size:1.1rem}
+  /* scene */
+  .scene{font-size:1.19rem; line-height:1.86}
+  .scene p{margin:0 0 1.25em}
+  .scene p.first{margin-top:.2em}
+  .scene p.first::first-letter{
+    font-family:var(--display); font-weight:600; float:left; line-height:.82;
+    font-size:3.6em; padding:.02em .1em 0 0; color:var(--amber);
+  }
+  .brk{text-align:center; color:var(--amber); letter-spacing:.5em; margin:2em 0; font-size:1rem}
+  /* cta */
+  .cta{margin:48px 0 0; padding:34px 26px; text-align:center;
+    border:1px solid var(--line); border-radius:14px;
+    background:linear-gradient(180deg,rgba(201,164,104,.06),rgba(0,0,0,.12));}
+  .cta h2{font-family:var(--display); font-weight:600; font-size:1.7rem; margin:.1em 0 .4em; color:#f2ecdf}
+  .cta p{color:var(--ink); font-size:1.08rem; line-height:1.7; margin:0 auto 20px; max-width:30em}
+  .cta .btn{font-size:.95rem; padding:14px 26px}
+  .series{margin-top:22px; font-family:var(--sans); font-size:.72rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--ink-soft)}
+  .series b{color:var(--amber); font-weight:600}
+  .next{margin-top:20px; font-size:1rem; color:var(--ink-soft)}
+  .next a{color:var(--amber); text-decoration:underline; text-underline-offset:3px}
+  footer{text-align:center; padding:34px 0 10px; color:var(--ink-soft);
+    font-family:var(--sans); font-size:.7rem; letter-spacing:.16em; text-transform:uppercase}
+  /* 18+ gate */
+  .gate{position:fixed; inset:0; z-index:100; display:flex; align-items:center; justify-content:center;
+    padding:24px; background:rgba(4,7,11,.86); backdrop-filter:blur(10px)}
+  .gate.hidden{display:none}
+  .card{max-width:440px; width:100%; text-align:center; padding:34px 28px;
+    border:1px solid var(--line); border-radius:16px;
+    background:linear-gradient(180deg,#121b28,#0b111a); box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .card .label{margin-bottom:14px}
+  .card h2{font-family:var(--display); font-weight:600; font-size:1.5rem; margin:0 0 14px; color:#f2ecdf}
+  .card p{color:var(--ink-soft); font-size:.98rem; line-height:1.65; margin:0 0 12px}
+  .card .actions{margin-top:22px; display:flex; flex-direction:column; gap:12px}
+  .card .btn{width:100%}
+  body.locked{overflow:hidden}
+  @media (max-width:600px){
+    .wrap{padding:0 18px 70px}
+    .hero{padding:40px 0 6px}
+    .scene{font-size:1.12rem; line-height:1.82}
+    .brand small{display:none}
+    .cta{padding:28px 18px}
+  }
+</style>
+</head>
+<body class="locked">
+  <div class="gate" id="gate">
+    <div class="card">
+      <div class="label">Marblemount &middot; Book Three</div>
+      <h2>The Long Way Back</h2>
+      <p>This is an excerpt from <em>The Long Way Back</em>, small-town romantic suspense for adult readers. This scene is explicit and open-door.</p>
+      <p>Like the whole series, the book follows a woman rebuilding her life after an abusive relationship. That history is referred to but never shown for entertainment.</p>
+      <p><strong style="color:var(--ink)">You must be 18 or older to read on.</strong></p>
+      <div class="actions">
+        <button class="btn" id="enter">I am 18 or older. Read the scene.</button>
+        <a class="btn ghost" href="https://www.amazon.com/dp/B0H4X1PX34">Start the series with Book 1</a>
+      </div>
+    </div>
+  </div>
+  <div class="topbar">
+    <div class="brand">The Long Way Back<small>Book Three &middot; coming soon</small></div>
+    <a class="btn small" href="https://www.amazon.com/dp/B0H4X1PX34">Book 1 free in Kindle Unlimited</a>
+  </div>
+  <div class="wrap">
+    <div class="hero">
+      <div class="label">Marblemount &middot; Book Three</div>
+      <h1>The Long Way Back</h1>
+      <p class="tag">She always leaves first. He waited nineteen years.</p>
+      <div class="chapter">An excerpt &middot; Chapter Fourteen</div>
+    </div>
+    <div class="rule"></div>
+    <p class="setup">Nora came home to bury her mother and leave clean, the way she has left everything for nineteen years, getting out before it can cost her anything. Beck is the first love she ran from, and the father of the daughter she never told him about. Tonight the leaving fails.</p>
+    <div class="dot">&bull;</div>
+    <div class="scene">
+        <p class="first">He was already too close. She did not feel either of them move and could not have said, after, who closed the last of the distance. The anger came off him like heat off asphalt. Under it was the other thing, the one that had been in the room since the first morning on the porch, and she watched it cross his face the same instant it crossed hers.</p>
+        <p>She thought, very clearly: this changes nothing.</p>
+        <p>She took a fistful of his shirt and pulled him down.</p>
+        <p>He came without an ounce of give. The wall met her back before she understood he had walked her into it. He caught her wrists when her hands came up between them and set them flat to the plaster on either side of her head and held them there, and stopped, his mouth a breath from hers. Not closing it. Looking at her.</p>
+        <p>He was making her be the one. He knew her. He knew she was the one who stepped back, who decided the angle of every room she stood in, and he held her pinned by her own wrists and waited to see whether she would do the thing she had never once allowed herself. Want out loud. Not take it back.</p>
+        <p>“Beck.” It came out of her wrecked.</p>
+        <p>“Say it.”</p>
+        <p>“I don’t want to be the one who leaves.” There was no breath behind it. “I’m so tired of getting out before it can cost me anything. Not tonight. Don’t let me out.”</p>
+        <p>The discipline went out of him all at once. She felt it leave his hands, his shoulders, the long control of a man who handled dangerous things for a living simply gone. He let go of her wrists and took her face instead, both hands, rough, and kissed her like the right was his. And God help her, she wanted it to be his, wanted it with a heat that shamed her even as it moved through her.</p>
+        <p>Her hands were already at his buttons. He let her work them, watching her do it, and being watched took her apart faster than touch would have. She got the shirt open and pushed it back off his shoulders. He let her, holding still under her hands the way a big animal holds, and whatever he had built to keep people out, he stood there and let her past it.</p>
+        <p>He stripped her shirt off and drew a breath at the sight of her, like a man handed something he had long ago given up on. Then his mouth was on her. Her shoulder. The hollow of her throat. The rise of her breast. Unhurried, exact, and she let her head fall back against the plaster and let him, and the wanting climbed in her, slow and huge and frightening. He had her caged there and the years had finally turned her loose and he slowed down. That was what she had not braced for. The slow of it. A man in no hurry at all to reach the end of something he’d been promised he would never have.</p>
+        <p>He lifted his mouth from her skin and waited. He wanted her eyes, and he wasn’t going to take them.</p>
+        <p>She couldn’t. The looking was where she lived. The looking was how she stayed on top of a moment, and she did not want to be anywhere she could watch herself from.</p>
+        <p>He didn’t move again until she opened her eyes and gave him the looking on her own. When she did, the thing in his face was so far from anger, so close to the boy from the fire road, that it nearly took her legs.</p>
+        <p>He said nothing. He just held it, like a man who had waited nineteen years for the right to.</p>
+        <p>He got her up off her feet, one arm hooked under her, and carried her the few steps to the couch, and that was its own undoing. Being carried. Being moved. She was the one who moved everyone, and he had simply picked her up and decided where she was going, and her body answered it before her pride could. She filed it even then, even gone as she was, the small alarm of it. He had taken the deciding out of her hands. She would have to take it back. She always took it back.</p>
+        <p>He set her down and stripped the rest of her clothes off her, and her own hands went to his belt out of some instinct to have a job, to be doing rather than being done to. There was an ordinary fumbling minute of it, a jean leg, a boot that would not come loose, the two of them half laughing and not laughing in the dark. And under it her body was already ahead of her mind, already remembering him, the shape and the heat and the particular way he had always fit her, a nineteen-year-old memory waking up in a thirty-seven-year-old body and finding the man it remembered had only gotten better at this. That was the thing she could not arm herself against. Her mind kept its distance the way it kept distance from everything. Her body had already gone home.</p>
+        <p>Then there was nothing left between them, and he settled his weight over her and went still, braced on his arms, and gave her the last second to send him back to the door she always kept a hand on. She did not send him back. He pressed into her by degrees, slow, and when he was fully seated he went heavy and still, and the low cry dragged out of her was not one she chose, and she hated for one bright second that he had heard it, that he knew that much of her now, that the sound had gotten out before she could get ahead of it and decide whether he was allowed it.</p>
+        <p>From his first stroke the old habit woke in her and reached for the quick way out, to tip herself over early, fast and quiet and on her own terms, before the thing could climb to the height where losing it would cost her. She had gotten out ahead of every man who came before him, and not one had ever known. Most had been flattered by how fast she went. He was not. He felt her go for the early finish, and he stopped where he was, deep, and kept her from it.</p>
+        <p>“No.” Against her jaw, low. “Not the short way. Not this time.” He waited until she stopped reaching for it. “You don’t run out early on me. Not anymore.”</p>
+        <p>She went for it again, the only finish she had ever trusted, and again he stayed just under the pace she grabbed for, holding her off her own ledge, so that it built slow and on his terms and not hers. It climbed past the place she always stepped in and ended it, on past anywhere she had ever stayed for, and she could not get in front of it. Her hips were moving with him, and she was not the one working them. Her throat gave up a sound she had not agreed to.</p>
+        <p>He took her up slow and would not be rushed, and kept her there at the very top, trembling, in the country past her own ending that she had kept herself clear of for nineteen years, and would not bring her down and would not let her tip over early, until the competent thing in her that ran every room had nothing left to run. She had started to beg him by then, low, with no pride left in it, the asking she never did, she who had not wanted one thing out loud from anyone in more years than she would say. He did not stop. He held her under him and took her over, and for once she had no say in when it came.</p>
+        <p>Something in her cut loose and everything let go together. It bowed her up off the couch and she broke open in long hard pulls she could not have closed a hand around, and the cry it tore out of her came in the voice of a girl she had buried nineteen years south of here. He came apart a moment after her, the sound of it caught against her neck, and he stayed in it with her to the last and did not pull away.</p>
+        <p>Then the long slow way down, and she lay under his weight with her own pulse roaring and felt the old armor come back online slowly, piece by piece, climbing back up out of wherever he had knocked it loose. A man’s whole weight was set down on her, where for half her life she had not let anyone rest so much as a hand, and she let it stay a moment, and the letting was already costing her. Her hands had fisted in his back without her leave. She made herself, one finger at a time, open them.</p>
+        <p>For one cracked moment in the dark they were not two people who had wrecked each other. They were the two who had drawn a whole life on the back of a gas station receipt and never got to live in it, lying, finally, too late, in one of its rooms.</p>
+        <p>Then the moment let go of them. He eased out of her, and she felt the loss of him like cold air on her skin. The front room was just a cold front room again. The thing between them was exactly as broken as it had been an hour before. His arm lay heavy and warm across her, and her pulse would not come down.</p>
+        <p>She moved first. She was always the one who moved first.</p>
+        <p>“That didn’t change anything.” She said it to the ceiling. She kept it level. She was proud of how level she kept it. “You know that.”</p>
+        <p>He was quiet a long while. Then he drew his arm back and gave her the space, and she hated how much of her had wanted him to keep it where it was.</p>
+        <p>“I know it didn’t change the part you won’t say.” Low. Not unkind, which was worse than unkind. “I’m starting to think nothing will. I’m starting to think you’d let the whole thing burn before you’d tell me one true word about why you went.” He sat up and found his shirt in the dark. “That’s what I can’t get past. I would have come. I’d come now. You only ever had to say it.” The shirt over his head. “You still won’t.”</p>
+        <p>He let himself out quiet, the way a man leaves a house with a sleeping child in it.</p>
+        <p>Nora lay in the wreck of her own resolve and listened to the bike turn over down the drive and go. She put a hand flat on her own chest, where his heart had been slamming a minute before. Only her own was under it now. Going too fast. Keeping the thing it had kept too long.</p>
+    </div>
+    <div class="cta">
+      <div class="label">Coming soon</div>
+      <h2>Keep reading</h2>
+      <p>The Long Way Back, Book Three of the Marblemount series, is releasing soon. The story starts with <em>One Floor Up</em>, available now and free in Kindle Unlimited. Start there and read your way here.</p>
+      <a class="btn" href="https://www.amazon.com/dp/B0H4X1PX34">Start with Book 1, free in Kindle Unlimited &rarr;</a>
+      <div class="series"><b>The Marblemount series.</b> Slow burn &middot; Open door &middot; Small-town romantic suspense</div>
+      <p class="next"><a href="./" style="color:var(--amber);text-decoration:underline;text-underline-offset:3px">See the whole series &rarr;</a></p>
+    </div>
+  </div>
+  <footer>Della Larkin &middot; The Long Way Back</footer>
+<script>
+  (function(){
+    var gate=document.getElementById('gate'), enter=document.getElementById('enter'), body=document.body;
+    enter.addEventListener('click',function(){
+      gate.classList.add('hidden'); body.classList.remove('locked');
+      window.scrollTo(0,0);
+    });
+  })();
+</script>
+  <script data-goatcounter="https://dellalarkin.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script>
+    (function(){
+      function track(n){ if(window.goatcounter && window.goatcounter.count){ window.goatcounter.count({path:n, title:n, event:true}); } }
+      document.addEventListener('click', function(e){
+        if(e.target.closest('#enter')) track('gate-enter-b3');
+        var a=e.target.closest('a'); if(a && (a.getAttribute('href')||'').indexOf('amazon.')>-1) track('ku-click-b3');
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>What the Valley Keeps &middot; An Excerpt &middot; Della Larkin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@500;600&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-top:#101927; --bg-bot:#05080c; --ink:#e9e3d6; --ink-soft:#a9b0bb;
+    --amber:#c9a468; --amber-deep:#b6893f; --line:rgba(201,164,104,.35);
+    --serif:'EB Garamond',Georgia,serif; --display:'Playfair Display',Georgia,serif;
+    --sans:'Montserrat',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; color:var(--ink); font-family:var(--serif);
+    background:
+      radial-gradient(60% 45% at 62% 82%, rgba(201,134,58,.16), transparent 60%),
+      radial-gradient(50% 40% at 18% 12%, rgba(60,90,120,.14), transparent 60%),
+      linear-gradient(180deg,var(--bg-top),var(--bg-bot) 90%);
+    background-attachment:fixed; min-height:100vh;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  a{color:inherit}
+  /* top bar */
+  .topbar{
+    position:sticky; top:0; z-index:40; display:flex; align-items:center; justify-content:space-between;
+    gap:12px; padding:12px 18px; backdrop-filter:blur(8px);
+    background:rgba(8,12,18,.72); border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .brand{font-family:var(--sans); font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+    font-size:.7rem; color:var(--amber)}
+  .brand small{display:block; color:var(--ink-soft); letter-spacing:.14em; font-weight:500; font-size:.62rem}
+  .btn{
+    display:inline-block; font-family:var(--sans); font-weight:600; letter-spacing:.04em;
+    text-decoration:none; cursor:pointer; border:none; border-radius:999px;
+    padding:11px 20px; font-size:.82rem; line-height:1;
+    color:#1a1206; background:linear-gradient(180deg,#dcb877,#c9a468);
+    box-shadow:0 6px 18px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.35);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px); box-shadow:0 9px 22px rgba(0,0,0,.45)}
+  .btn.small{padding:9px 15px; font-size:.72rem}
+  .btn.ghost{background:transparent; color:var(--amber); border:1px solid var(--line); box-shadow:none}
+  /* layout */
+  .wrap{max-width:690px; margin:0 auto; padding:0 22px 90px}
+  .hero{text-align:center; padding:54px 0 10px}
+  .label{font-family:var(--sans); font-weight:600; letter-spacing:.34em; text-transform:uppercase;
+    font-size:.66rem; color:var(--amber)}
+  .rule{width:56px; height:1px; background:var(--line); margin:16px auto}
+  h1{font-family:var(--display); font-weight:600; font-size:clamp(2.4rem,9vw,3.6rem);
+    margin:.15em 0 .1em; letter-spacing:.01em; color:#f2ecdf}
+  .tag{font-family:var(--serif); font-style:italic; color:var(--ink-soft); font-size:1.05rem; margin:0}
+  .chapter{font-family:var(--sans); font-weight:500; letter-spacing:.28em; text-transform:uppercase;
+    font-size:.64rem; color:var(--amber); margin-top:26px}
+  .setup{font-family:var(--serif); font-style:italic; color:var(--ink-soft);
+    text-align:center; font-size:1.06rem; line-height:1.7; max-width:33em; margin:18px auto 6px}
+  .dot{color:var(--amber); text-align:center; margin:22px 0 8px; font-size:1.1rem}
+  /* scene */
+  .scene{font-size:1.19rem; line-height:1.86}
+  .scene p{margin:0 0 1.25em}
+  .scene p.first{margin-top:.2em}
+  .scene p.first::first-letter{
+    font-family:var(--display); font-weight:600; float:left; line-height:.82;
+    font-size:3.6em; padding:.02em .1em 0 0; color:var(--amber);
+  }
+  .brk{text-align:center; color:var(--amber); letter-spacing:.5em; margin:2em 0; font-size:1rem}
+  /* cta */
+  .cta{margin:48px 0 0; padding:34px 26px; text-align:center;
+    border:1px solid var(--line); border-radius:14px;
+    background:linear-gradient(180deg,rgba(201,164,104,.06),rgba(0,0,0,.12));}
+  .cta h2{font-family:var(--display); font-weight:600; font-size:1.7rem; margin:.1em 0 .4em; color:#f2ecdf}
+  .cta p{color:var(--ink); font-size:1.08rem; line-height:1.7; margin:0 auto 20px; max-width:30em}
+  .cta .btn{font-size:.95rem; padding:14px 26px}
+  .series{margin-top:22px; font-family:var(--sans); font-size:.72rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--ink-soft)}
+  .series b{color:var(--amber); font-weight:600}
+  .next{margin-top:20px; font-size:1rem; color:var(--ink-soft)}
+  .next a{color:var(--amber); text-decoration:underline; text-underline-offset:3px}
+  footer{text-align:center; padding:34px 0 10px; color:var(--ink-soft);
+    font-family:var(--sans); font-size:.7rem; letter-spacing:.16em; text-transform:uppercase}
+  /* 18+ gate */
+  .gate{position:fixed; inset:0; z-index:100; display:flex; align-items:center; justify-content:center;
+    padding:24px; background:rgba(4,7,11,.86); backdrop-filter:blur(10px)}
+  .gate.hidden{display:none}
+  .card{max-width:440px; width:100%; text-align:center; padding:34px 28px;
+    border:1px solid var(--line); border-radius:16px;
+    background:linear-gradient(180deg,#121b28,#0b111a); box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .card .label{margin-bottom:14px}
+  .card h2{font-family:var(--display); font-weight:600; font-size:1.5rem; margin:0 0 14px; color:#f2ecdf}
+  .card p{color:var(--ink-soft); font-size:.98rem; line-height:1.65; margin:0 0 12px}
+  .card .actions{margin-top:22px; display:flex; flex-direction:column; gap:12px}
+  .card .btn{width:100%}
+  body.locked{overflow:hidden}
+  @media (max-width:600px){
+    .wrap{padding:0 18px 70px}
+    .hero{padding:40px 0 6px}
+    .scene{font-size:1.12rem; line-height:1.82}
+    .brand small{display:none}
+    .cta{padding:28px 18px}
+  }
+</style>
+</head>
+<body class="locked">
+  <div class="gate" id="gate">
+    <div class="card">
+      <div class="label">Marblemount &middot; Book Five</div>
+      <h2>What the Valley Keeps</h2>
+      <p>This is an excerpt from <em>What the Valley Keeps</em>, small-town romantic suspense for adult readers. This scene is explicit and open-door, and includes anal sex.</p>
+      <p>Like the whole series, the book follows a woman rebuilding her life after an abusive relationship. That history is referred to but never shown for entertainment.</p>
+      <p><strong style="color:var(--ink)">You must be 18 or older to read on.</strong></p>
+      <div class="actions">
+        <button class="btn" id="enter">I am 18 or older. Read the scene.</button>
+        <a class="btn ghost" href="https://www.amazon.com/dp/B0H4X1PX34">Start the series with Book 1</a>
+      </div>
+    </div>
+  </div>
+  <div class="topbar">
+    <div class="brand">What the Valley Keeps<small>Book Five &middot; coming soon</small></div>
+    <a class="btn small" href="https://www.amazon.com/dp/B0H4X1PX34">Book 1 free in Kindle Unlimited</a>
+  </div>
+  <div class="wrap">
+    <div class="hero">
+      <div class="label">Marblemount &middot; Book Five</div>
+      <h1>What the Valley Keeps</h1>
+      <p class="tag">She reads every room. She lets no one read her.</p>
+      <div class="chapter">An excerpt &middot; Chapter Thirty-Four</div>
+    </div>
+    <div class="rule"></div>
+    <p class="setup">Frankie was FBI, a watcher who let no one read her. Sawyer has spent thirty years arranging the dark around other people so no one would find them. This afternoon, in the full daylight with the curtains open, neither of them wants the dark anymore.</p>
+    <div class="dot">&bull;</div>
+    <div class="scene">
+        <p class="first">He took her inside out of the afternoon sun and left the curtains open. The daylight came full across the bed and lit the whole room, and for a man who had spent thirty years arranging the dark around other people, leaving the curtains open was the loudest thing he could have said. She heard it. He reached to undress her, and she caught his hand.</p>
+        <p>“Not yet,” she said. “I want you to watch.”</p>
+        <p>She stepped into the middle of the lit floor and took her own clothes off, slow, while he stood where she had left him with his hand still half-raised. She made him wait through every piece of it. His eyes followed the cloth down and stayed on the skin it left, and she felt the weight of his looking move over her, her throat, her breasts, the flat of her stomach, the line of one hip, and by the time the last of it dropped she was wet and he had not laid a finger on her. Wet from being looked at, in the daylight, by the one man alive who had seen the whole of her and turned from none of it.</p>
+        <p>“Keep watching,” she said, and lay back on the bed in the full light, and put her hand between her legs.</p>
+        <p>She was slicker than her own fingers expected. Across the room his breath went rough, and the sound of what the look of her was doing to him ran through her harder than her own hand. She worked herself slow and let him see all of it, and held his eyes the whole time, and it was the watching, not the hand, that wound her toward the edge. She took herself almost there. Then she stopped, and held still, shaking with how close she was, because she was not going over alone in this room. Not this time. She wanted him in her when she did.</p>
+        <p>“Come here,” she said.</p>
+        <p>He crossed the room and she pulled him down onto the bed and there was nothing slow left in either of them. He got her under him and she opened her legs around him and he drove into her in one long stroke, and the sound it pulled out of her was nothing she had decided to make. He set a hard pace and she rose to meet it, and when she felt her own body begin to climb she did the old thing without meaning to, started to leave it, started up out of herself toward the ceiling to watch the room from above. He felt her go. He caught her jaw in one hand and brought her face back to his.</p>
+        <p>“Stay here,” he said against her jaw. “Stay with me. Watch me.”</p>
+        <p>And she did. She kept her eyes on his and let him hold her down in her own skin while he took her, no room left over to climb out into, nowhere to go but the want in his face and the light on it, and it tipped her fast. She went over hard with him driving into her and his eyes on hers, and shook through it against him, and he held himself deep and still and did not follow. He had the whole afternoon, and he had not finished a thing yet.</p>
+        <p>When she came down she put a hand to his chest and pushed him over onto his back and rose up over him and took the afternoon into her own hands.</p>
+        <p>She went slow now, on purpose. She put her hands and her mouth down the length of him, learning him over again in the light, every scar, every plane, the way she had on the third night in the lamplight with the lie still under all of it, except there was nothing under it now. She brought him hard under her mouth and felt him fight to hold still for her and made him do it. Then she sat up over him and took his face in both hands and gave him nowhere to put his eyes but on her.</p>
+        <p>“Your turn,” she said. “You spent the whole of your life watching from outside the room. You don’t get to watch this one. You’re going to be in it.”</p>
+        <p>Then she gave him the last thing she had kept back. She did it herself, in her own hands, at her own pace, the way she did everything. She lifted off him and reached for the slick of herself and worked it back over the tight clench of her ass, slow, until she had opened herself there on two of her own fingers. Only then did she rise up over him and set the head of him against her and start to take him in. She went slow because she had to, breathing through the stretch and the ache of it, working herself down onto him a little deeper on each breath, watching his face the whole way, until she had taken him all the way into her ass, the one part of her no one had ever had. She held still over him then, full of him, stretched open around him in the daylight, and did not take it back.</p>
+        <p>Then she began to move. She rode him slow and deep and stayed in command of every second of it, and watched the last of the distance go out of him, the long years of standing in the dark outside other people’s lit windows, gone, here, under her. He gave her the low broken sounds he had made for no one. He gave her his pulse, slamming under the hand she kept spread on his chest. He reached for the old control and she did not let him have it, and when he broke she went with him, her ass pulling tight around him, the pleasure long and deep and wringing the breath out of her. He spilled into her with his eyes wide on hers because she would not let them close, the two of them staring straight into one another the whole way through it, in the full light, the curtains open on a valley that could have seen them, and the both of them wanting it to, wanting the whole bright world to know they were done hiding.</p>
+        <p>She came down over him and stayed where she was, joined and still, her palms on his face, and they lay in the afternoon light with the sweat going cold on them and neither of them reaching for the door or the angle or the distance. There was nothing in the room to watch but each other, and the other had stayed. He brought a hand up and pushed the wet hair off her face, slow, like a thing he was still learning the shape of, and she turned her cheek into his palm.</p>
+        <p>After, she lay along his side with her hand over his heart, and he felt his own pulse going hard under her palm and did not move her hand away, and the not-moving was the whole of what had changed in him. The heart had always been the one thing he could not govern, and he had spent his life making sure no one ever got near enough to feel it. She felt it now, and he let her. He lay in the open light with her breath slowing against his ribs, the watcher, seen all the way down at last, and not dead of it.</p>
+        <p>“You stopped watching the door,” she said, drowsy, against his chest. She had clocked it. She was the kind who would. “You always watch the door. You didn’t, just now.”</p>
+        <p>“No,” he said. “Nothing’s coming through it.”</p>
+        <p>“There’s always something coming through it. You taught me that.”</p>
+        <p>“There’s always something coming through everybody’s door.” He held her eyes instead of looking away, which from him was the same as another man opening his whole chest, because the looking was the part of him that told the truth. “I spent the long years being the one who watched it so nobody else had to. I’m going to keep seeing it. I can’t not. But I’m done being the only one awake. Somebody else can take the door tonight. I’m going to lie here in the light and let you keep your hand on my pulse and not mind that you can. That’s the trade. That’s what I bought with the one thing I had left to spend.”</p>
+        <p>She was quiet a while, and then she laughed, low and surprised, the way a laugh comes out of someone who has gone a long time without the use of one, and he felt it move through her where she lay against him, and thought it was the best sound he had heard in years, and told her so, out loud, in the daylight.</p>
+    </div>
+    <div class="cta">
+      <div class="label">Coming soon</div>
+      <h2>Keep reading</h2>
+      <p>What the Valley Keeps, Book Five of the Marblemount series, is releasing soon. The story starts with <em>One Floor Up</em>, available now and free in Kindle Unlimited. Start there and read your way here.</p>
+      <a class="btn" href="https://www.amazon.com/dp/B0H4X1PX34">Start with Book 1, free in Kindle Unlimited &rarr;</a>
+      <div class="series"><b>The Marblemount series.</b> Slow burn &middot; Open door &middot; Small-town romantic suspense</div>
+      <p class="next"><a href="./" style="color:var(--amber);text-decoration:underline;text-underline-offset:3px">See the whole series &rarr;</a></p>
+    </div>
+  </div>
+  <footer>Della Larkin &middot; What the Valley Keeps</footer>
+<script>
+  (function(){
+    var gate=document.getElementById('gate'), enter=document.getElementById('enter'), body=document.body;
+    enter.addEventListener('click',function(){
+      gate.classList.add('hidden'); body.classList.remove('locked');
+      window.scrollTo(0,0);
+    });
+  })();
+</script>
+  <script data-goatcounter="https://dellalarkin.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script>
+    (function(){
+      function track(n){ if(window.goatcounter && window.goatcounter.count){ window.goatcounter.count({path:n, title:n, event:true}); } }
+      document.addEventListener('click', function(e){
+        if(e.target.closest('#enter')) track('gate-enter-b5');
+        var a=e.target.closest('a'); if(a && (a.getAttribute('href')||'').indexOf('amazon.')>-1) track('ku-click-b5');
+      });
+    })();
+  </script>
+</body>
+</html>

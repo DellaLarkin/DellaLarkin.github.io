@@ -232,9 +232,9 @@
     (function(){
       function track(name){ if(window.goatcounter && window.goatcounter.count){ window.goatcounter.count({path:name, title:name, event:true}); } }
       document.addEventListener('click', function(e){
-        if(e.target.closest('#enter')) track('gate-enter');
+        if(e.target.closest('#enter')) track('gate-enter-b1');
         var a = e.target.closest('a');
-        if(a && (a.getAttribute('href')||'').indexOf('amazon.') > -1) track('ku-click-sample');
+        if(a && (a.getAttribute('href')||'').indexOf('amazon.') > -1) track('ku-click-b1');
       });
     })();
   </script>

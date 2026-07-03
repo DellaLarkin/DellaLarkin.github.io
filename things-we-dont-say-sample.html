@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Things We Don’t Say &middot; An Excerpt &middot; Della Larkin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@500;600&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-top:#101927; --bg-bot:#05080c; --ink:#e9e3d6; --ink-soft:#a9b0bb;
+    --amber:#c9a468; --amber-deep:#b6893f; --line:rgba(201,164,104,.35);
+    --serif:'EB Garamond',Georgia,serif; --display:'Playfair Display',Georgia,serif;
+    --sans:'Montserrat',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; color:var(--ink); font-family:var(--serif);
+    background:
+      radial-gradient(60% 45% at 62% 82%, rgba(201,134,58,.16), transparent 60%),
+      radial-gradient(50% 40% at 18% 12%, rgba(60,90,120,.14), transparent 60%),
+      linear-gradient(180deg,var(--bg-top),var(--bg-bot) 90%);
+    background-attachment:fixed; min-height:100vh;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  a{color:inherit}
+  /* top bar */
+  .topbar{
+    position:sticky; top:0; z-index:40; display:flex; align-items:center; justify-content:space-between;
+    gap:12px; padding:12px 18px; backdrop-filter:blur(8px);
+    background:rgba(8,12,18,.72); border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .brand{font-family:var(--sans); font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+    font-size:.7rem; color:var(--amber)}
+  .brand small{display:block; color:var(--ink-soft); letter-spacing:.14em; font-weight:500; font-size:.62rem}
+  .btn{
+    display:inline-block; font-family:var(--sans); font-weight:600; letter-spacing:.04em;
+    text-decoration:none; cursor:pointer; border:none; border-radius:999px;
+    padding:11px 20px; font-size:.82rem; line-height:1;
+    color:#1a1206; background:linear-gradient(180deg,#dcb877,#c9a468);
+    box-shadow:0 6px 18px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.35);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px); box-shadow:0 9px 22px rgba(0,0,0,.45)}
+  .btn.small{padding:9px 15px; font-size:.72rem}
+  .btn.ghost{background:transparent; color:var(--amber); border:1px solid var(--line); box-shadow:none}
+  /* layout */
+  .wrap{max-width:690px; margin:0 auto; padding:0 22px 90px}
+  .hero{text-align:center; padding:54px 0 10px}
+  .label{font-family:var(--sans); font-weight:600; letter-spacing:.34em; text-transform:uppercase;
+    font-size:.66rem; color:var(--amber)}
+  .rule{width:56px; height:1px; background:var(--line); margin:16px auto}
+  h1{font-family:var(--display); font-weight:600; font-size:clamp(2.4rem,9vw,3.6rem);
+    margin:.15em 0 .1em; letter-spacing:.01em; color:#f2ecdf}
+  .tag{font-family:var(--serif); font-style:italic; color:var(--ink-soft); font-size:1.05rem; margin:0}
+  .chapter{font-family:var(--sans); font-weight:500; letter-spacing:.28em; text-transform:uppercase;
+    font-size:.64rem; color:var(--amber); margin-top:26px}
+  .setup{font-family:var(--serif); font-style:italic; color:var(--ink-soft);
+    text-align:center; font-size:1.06rem; line-height:1.7; max-width:33em; margin:18px auto 6px}
+  .dot{color:var(--amber); text-align:center; margin:22px 0 8px; font-size:1.1rem}
+  /* scene */
+  .scene{font-size:1.19rem; line-height:1.86}
+  .scene p{margin:0 0 1.25em}
+  .scene p.first{margin-top:.2em}
+  .scene p.first::first-letter{
+    font-family:var(--display); font-weight:600; float:left; line-height:.82;
+    font-size:3.6em; padding:.02em .1em 0 0; color:var(--amber);
+  }
+  .brk{text-align:center; color:var(--amber); letter-spacing:.5em; margin:2em 0; font-size:1rem}
+  /* cta */
+  .cta{margin:48px 0 0; padding:34px 26px; text-align:center;
+    border:1px solid var(--line); border-radius:14px;
+    background:linear-gradient(180deg,rgba(201,164,104,.06),rgba(0,0,0,.12));}
+  .cta h2{font-family:var(--display); font-weight:600; font-size:1.7rem; margin:.1em 0 .4em; color:#f2ecdf}
+  .cta p{color:var(--ink); font-size:1.08rem; line-height:1.7; margin:0 auto 20px; max-width:30em}
+  .cta .btn{font-size:.95rem; padding:14px 26px}
+  .series{margin-top:22px; font-family:var(--sans); font-size:.72rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--ink-soft)}
+  .series b{color:var(--amber); font-weight:600}
+  .next{margin-top:20px; font-size:1rem; color:var(--ink-soft)}
+  .next a{color:var(--amber); text-decoration:underline; text-underline-offset:3px}
+  footer{text-align:center; padding:34px 0 10px; color:var(--ink-soft);
+    font-family:var(--sans); font-size:.7rem; letter-spacing:.16em; text-transform:uppercase}
+  /* 18+ gate */
+  .gate{position:fixed; inset:0; z-index:100; display:flex; align-items:center; justify-content:center;
+    padding:24px; background:rgba(4,7,11,.86); backdrop-filter:blur(10px)}
+  .gate.hidden{display:none}
+  .card{max-width:440px; width:100%; text-align:center; padding:34px 28px;
+    border:1px solid var(--line); border-radius:16px;
+    background:linear-gradient(180deg,#121b28,#0b111a); box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .card .label{margin-bottom:14px}
+  .card h2{font-family:var(--display); font-weight:600; font-size:1.5rem; margin:0 0 14px; color:#f2ecdf}
+  .card p{color:var(--ink-soft); font-size:.98rem; line-height:1.65; margin:0 0 12px}
+  .card .actions{margin-top:22px; display:flex; flex-direction:column; gap:12px}
+  .card .btn{width:100%}
+  body.locked{overflow:hidden}
+  @media (max-width:600px){
+    .wrap{padding:0 18px 70px}
+    .hero{padding:40px 0 6px}
+    .scene{font-size:1.12rem; line-height:1.82}
+    .brand small{display:none}
+    .cta{padding:28px 18px}
+  }
+</style>
+</head>
+<body class="locked">
+  <div class="gate" id="gate">
+    <div class="card">
+      <div class="label">Marblemount &middot; Book Two</div>
+      <h2>Things We Don’t Say</h2>
+      <p>This is an excerpt from <em>Things We Don’t Say</em>, small-town romantic suspense for adult readers. This scene is explicit and open-door.</p>
+      <p>Like the whole series, the book follows a woman rebuilding her life after an abusive relationship. That history is referred to but never shown for entertainment.</p>
+      <p><strong style="color:var(--ink)">You must be 18 or older to read on.</strong></p>
+      <div class="actions">
+        <button class="btn" id="enter">I am 18 or older. Read the scene.</button>
+        <a class="btn ghost" href="https://www.amazon.com/dp/B0H4X1PX34">Start the series with Book 1</a>
+      </div>
+    </div>
+  </div>
+  <div class="topbar">
+    <div class="brand">Things We Don’t Say<small>Book Two &middot; coming soon</small></div>
+    <a class="btn small" href="https://www.amazon.com/dp/B0H4X1PX34">Book 1 free in Kindle Unlimited</a>
+  </div>
+  <div class="wrap">
+    <div class="hero">
+      <div class="label">Marblemount &middot; Book Two</div>
+      <h1>Things We Don’t Say</h1>
+      <p class="tag">She can’t take without paying. He can’t be found.</p>
+      <div class="chapter">An excerpt &middot; Chapter Seventeen</div>
+    </div>
+    <div class="rule"></div>
+    <p class="setup">Tova fled to Marblemount with her son and a bag half-packed in her head, and she has spent her whole life unable to take a kindness without waiting for the bill. Eli is the town’s careful stranger, hiding a name that isn’t his own. This is the first night she lets herself be given to.</p>
+    <div class="dot">&bull;</div>
+    <div class="scene">
+        <p class="first">The hour came a few nights later, the way he had said it would, on its own and not before it was ready. She carried Søren to bed and stood a moment in his doorway listening to him breathe the way she did every night, and then she came back out to the small front room where Eli had not left. And she did not let him leave.</p>
+        <p>“You should go,” she said. “Is the sensible thing. There’s a man somewhere deciding what you’re worth. Tomorrow’s going to need both of us clear.” She crossed the room as she said it, which was the opposite of the words, and stopped close enough that she had to look up at him. “That’s the sensible thing. I’m done being sensible for tonight. I’ve been sensible for years. It kept me alive and it didn’t let me have a single thing.”</p>
+        <p>“Tova.” Her name, even, the way he said everything. “You don’t have to.”</p>
+        <p>“I know I don’t have to. That’s the whole point. That’s the only reason I’m doing it.” She took his hand and felt it, the slight betraying tremor in fingers trained never to betray anything, going while the rest of him stayed so still. “Nobody’s making me. There’s no bad night I’m hiding from. There’s no roof I need. I’ve got a roof. I’ve got a car and a half-packed bag in my head and fifty-five miles to a road that goes anywhere. I’m choosing this with all the exits open. You wanted to know it’d be a choice and not a reach. This is the choice. Look at me deciding it.”</p>
+        <p>She kissed him first, up on her toes with her fists in his collar, and the guard went out of him all at once. His hands came hard to her waist. She had three buttons of his shirt open before he caught her wrists.</p>
+        <p>He held them in one hand, easy, against his chest.</p>
+        <p>“Slow down,” he said against her mouth.</p>
+        <p>“I don’t do slow. I do it fast or I lose my nerve.”</p>
+        <p>“Then lose it.” He pressed her caught hands flat to his chest and held them there until they stopped straining. “You’re not running this. Not tonight.”</p>
+        <p>The wanting to fight him and the wanting to be made to stop came at the same time, and the second one won. Her hands went soft under his.</p>
+        <p>He kissed her like that, holding her still, until her mouth opened and she put her whole weight into him, and then he started on her clothes, slow, a piece at a time, his mouth never off hers, walking her back through the dark until the backs of her knees hit the bed.</p>
+        <p>She went down and he came over her, and stopped, and for a moment he only looked at her in the gray light, all of her, and she watched the disbelief cross his face, the look of a man who had spent nine years wanting nothing and could not quite trust that this was real. He bent and put his mouth to the hollow of her throat like it cost him something, and the bracing she still did under the weight of a man went out of her, because there was nothing in the way he touched her to brace against.</p>
+        <p>His thumb found her nipple and dragged across it and it drew up tight and she arched into his hand before she knew she had. He did it again. He found out he could pull a sound out of her by rolling it slow between his fingers, and he did it until the sound came, and she caught it behind her teeth, because Søren slept through a thin wall and the having to be quiet made it worse, made everything land harder for having nowhere to go.</p>
+        <p>His hand left her breast and went down her stomach and between her legs, into the wet of her, and the sound he made against her throat at how wet she was went straight through her. His fingers slid through the slick and circled her clit and pushed up into her, deep, and she rocked down onto them and turned her face into the pillow.</p>
+        <p>Her own hand went down between them and closed round his cock, thick and hot in her grip, because her hands wanted a job, because doing something to a man was the only way she had ever lain in a bed and not been afraid. She stroked him once, felt him jerk, heard him curse low against her skin. He caught her wrist and drew her hand off him and put it back up over her head.</p>
+        <p>“Not this time,” he said, rough. “You don’t run it. Lie there and take it.”</p>
+        <p>He kept his fingers working in her, slow and deep, his thumb on her clit, and brought her up, the heat winding tight and bright, her hips lifting into his hand, the edge of it right there. Then he slowed. Stopped. Held his fingers still inside her and let it slide back down.</p>
+        <p>The sound she made was not a word. Her hand went for his wrist to push it where she needed it, and he caught it and pinned it back to the pillow.</p>
+        <p>“No,” he said. “I told you. You don’t run it. Not even this.”</p>
+        <p>He built her back up, slower, his thumb circling and his fingers buried deep, the climb steeper for having been taken from her, and he carried her all the way to the top of it and held her there, shaking, right on the trembling edge, and would not let her over. He held her there past the point she could keep quiet, past pride, past the part of her that kept watch and kept score, until there was nothing left in her holding on and she was begging him in a broken whisper, the begging she had trained out of herself years back come up out of her now anyway.</p>
+        <p>“Eli. Please. Please, I can’t.”</p>
+        <p>And the guarded man came back into him then. His hand gentled in her, his thumb gone soft and slow, and he brought his mouth to her temple and her wet eyes and the corner of her jaw, kissing her there while she shook. “I’ve got you,” he said, low, and there was nothing dark left in it now, only the gentleness that was the truest thing about him. “I’m not going anywhere. Let go. I want to feel it happen. I want to feel you stop holding on.”</p>
+        <p>He hooked her knee up over his arm and pushed his cock into her, one slow stroke all the way to the root, and the stretch of him filling her where she had been aching and denied dragged a broken sound out of her she crushed into his shoulder. He held there, buried and still, and lifted his head and found her eyes in the dark, and for a moment neither of them moved, both of them undone by it, by the plain enormous fact of him inside her and her holding his eyes and neither of them having anywhere to be but here.</p>
+        <p>Then he drew back and drove in, slow and deep, and the friction she had been begging for was finally there, the thick drag of him on that spot inside her and the grind of his body against her clit, and the heat that had been held off so long came up fast and enormous.</p>
+        <p>She was right there in three strokes. And he felt it, and slowed, and drew it out, unhurried, holding her on the brink with his cock the way he had with his hand, except there was no cruelty in it now, only a man making the thing he had waited nine years for last, until she had stopped chasing it and gone soft and open and wholly his.</p>
+        <p>Only then did he give it to her, hard and fast, his hand gripping her hip to work her down onto him, and it tore through her, a clench so hard it lifted her clean off the bed, and then another behind it, and another, wave on wave of it while he took her through every one and did not slow and did not stop, dragging it out longer than she had known her body could hold it, her cry stifled against him and her nails breaking the skin of his back, and still it kept coming, rolling through her again each time she thought it was done, until she was wrung dry and could not have said her own name.</p>
+        <p>Then the last of his control went, and he drove in hard and came, his cock pulsing deep inside her, his groan breaking against her neck, and she held all of him close, and felt every part of it.</p>
+        <div class="brk">* * *</div>
+        <p>After, in the dark, the rain at the glass, she lay under the weight of him and waited for the part that always came after. The part where it cost something.</p>
+        <p>It didn’t come. She added it up out of habit and the sum wouldn’t total, because she had done nothing. Run nothing. Managed nothing. She had lain there and let him have her, and the bill never came.</p>
+        <p>“I didn’t do a thing,” she said, when she could talk.</p>
+        <p>“That was the point.” His mouth was in her hair. “Nine years I made sure nobody could find me. You spent the same nine making sure nobody could land on you. Two ways of running the one play.” His hand moved slow down her spine. “We can quit running it. Not all at once. But we can.”</p>
+        <p>She lay with her hands gone quiet on a man who had asked nothing of them, and the bill never came, and she was asleep before she could catch herself waiting for it.</p>
+    </div>
+    <div class="cta">
+      <div class="label">Coming soon</div>
+      <h2>Keep reading</h2>
+      <p>Things We Don’t Say, Book Two of the Marblemount series, is releasing soon. The story starts with <em>One Floor Up</em>, available now and free in Kindle Unlimited. Start there and read your way here.</p>
+      <a class="btn" href="https://www.amazon.com/dp/B0H4X1PX34">Start with Book 1, free in Kindle Unlimited &rarr;</a>
+      <div class="series"><b>The Marblemount series.</b> Slow burn &middot; Open door &middot; Small-town romantic suspense</div>
+      <p class="next"><a href="./" style="color:var(--amber);text-decoration:underline;text-underline-offset:3px">See the whole series &rarr;</a></p>
+    </div>
+  </div>
+  <footer>Della Larkin &middot; Things We Don’t Say</footer>
+<script>
+  (function(){
+    var gate=document.getElementById('gate'), enter=document.getElementById('enter'), body=document.body;
+    enter.addEventListener('click',function(){
+      gate.classList.add('hidden'); body.classList.remove('locked');
+      window.scrollTo(0,0);
+    });
+  })();
+</script>
+  <script data-goatcounter="https://dellalarkin.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script>
+    (function(){
+      function track(n){ if(window.goatcounter && window.goatcounter.count){ window.goatcounter.count({path:n, title:n, event:true}); } }
+      document.addEventListener('click', function(e){
+        if(e.target.closest('#enter')) track('gate-enter-b2');
+        var a=e.target.closest('a'); if(a && (a.getAttribute('href')||'').indexOf('amazon.')>-1) track('ku-click-b2');
+      });
+    })();
+  </script>
+</body>
+</html>

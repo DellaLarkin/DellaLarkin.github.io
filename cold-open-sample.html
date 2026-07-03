@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cold Open &middot; An Excerpt &middot; Della Larkin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@500;600&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-top:#101927; --bg-bot:#05080c; --ink:#e9e3d6; --ink-soft:#a9b0bb;
+    --amber:#c9a468; --amber-deep:#b6893f; --line:rgba(201,164,104,.35);
+    --serif:'EB Garamond',Georgia,serif; --display:'Playfair Display',Georgia,serif;
+    --sans:'Montserrat',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; color:var(--ink); font-family:var(--serif);
+    background:
+      radial-gradient(60% 45% at 62% 82%, rgba(201,134,58,.16), transparent 60%),
+      radial-gradient(50% 40% at 18% 12%, rgba(60,90,120,.14), transparent 60%),
+      linear-gradient(180deg,var(--bg-top),var(--bg-bot) 90%);
+    background-attachment:fixed; min-height:100vh;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  a{color:inherit}
+  /* top bar */
+  .topbar{
+    position:sticky; top:0; z-index:40; display:flex; align-items:center; justify-content:space-between;
+    gap:12px; padding:12px 18px; backdrop-filter:blur(8px);
+    background:rgba(8,12,18,.72); border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .brand{font-family:var(--sans); font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+    font-size:.7rem; color:var(--amber)}
+  .brand small{display:block; color:var(--ink-soft); letter-spacing:.14em; font-weight:500; font-size:.62rem}
+  .btn{
+    display:inline-block; font-family:var(--sans); font-weight:600; letter-spacing:.04em;
+    text-decoration:none; cursor:pointer; border:none; border-radius:999px;
+    padding:11px 20px; font-size:.82rem; line-height:1;
+    color:#1a1206; background:linear-gradient(180deg,#dcb877,#c9a468);
+    box-shadow:0 6px 18px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.35);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px); box-shadow:0 9px 22px rgba(0,0,0,.45)}
+  .btn.small{padding:9px 15px; font-size:.72rem}
+  .btn.ghost{background:transparent; color:var(--amber); border:1px solid var(--line); box-shadow:none}
+  /* layout */
+  .wrap{max-width:690px; margin:0 auto; padding:0 22px 90px}
+  .hero{text-align:center; padding:54px 0 10px}
+  .label{font-family:var(--sans); font-weight:600; letter-spacing:.34em; text-transform:uppercase;
+    font-size:.66rem; color:var(--amber)}
+  .rule{width:56px; height:1px; background:var(--line); margin:16px auto}
+  h1{font-family:var(--display); font-weight:600; font-size:clamp(2.4rem,9vw,3.6rem);
+    margin:.15em 0 .1em; letter-spacing:.01em; color:#f2ecdf}
+  .tag{font-family:var(--serif); font-style:italic; color:var(--ink-soft); font-size:1.05rem; margin:0}
+  .chapter{font-family:var(--sans); font-weight:500; letter-spacing:.28em; text-transform:uppercase;
+    font-size:.64rem; color:var(--amber); margin-top:26px}
+  .setup{font-family:var(--serif); font-style:italic; color:var(--ink-soft);
+    text-align:center; font-size:1.06rem; line-height:1.7; max-width:33em; margin:18px auto 6px}
+  .dot{color:var(--amber); text-align:center; margin:22px 0 8px; font-size:1.1rem}
+  /* scene */
+  .scene{font-size:1.19rem; line-height:1.86}
+  .scene p{margin:0 0 1.25em}
+  .scene p.first{margin-top:.2em}
+  .scene p.first::first-letter{
+    font-family:var(--display); font-weight:600; float:left; line-height:.82;
+    font-size:3.6em; padding:.02em .1em 0 0; color:var(--amber);
+  }
+  .brk{text-align:center; color:var(--amber); letter-spacing:.5em; margin:2em 0; font-size:1rem}
+  /* cta */
+  .cta{margin:48px 0 0; padding:34px 26px; text-align:center;
+    border:1px solid var(--line); border-radius:14px;
+    background:linear-gradient(180deg,rgba(201,164,104,.06),rgba(0,0,0,.12));}
+  .cta h2{font-family:var(--display); font-weight:600; font-size:1.7rem; margin:.1em 0 .4em; color:#f2ecdf}
+  .cta p{color:var(--ink); font-size:1.08rem; line-height:1.7; margin:0 auto 20px; max-width:30em}
+  .cta .btn{font-size:.95rem; padding:14px 26px}
+  .series{margin-top:22px; font-family:var(--sans); font-size:.72rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--ink-soft)}
+  .series b{color:var(--amber); font-weight:600}
+  .next{margin-top:20px; font-size:1rem; color:var(--ink-soft)}
+  .next a{color:var(--amber); text-decoration:underline; text-underline-offset:3px}
+  footer{text-align:center; padding:34px 0 10px; color:var(--ink-soft);
+    font-family:var(--sans); font-size:.7rem; letter-spacing:.16em; text-transform:uppercase}
+  /* 18+ gate */
+  .gate{position:fixed; inset:0; z-index:100; display:flex; align-items:center; justify-content:center;
+    padding:24px; background:rgba(4,7,11,.86); backdrop-filter:blur(10px)}
+  .gate.hidden{display:none}
+  .card{max-width:440px; width:100%; text-align:center; padding:34px 28px;
+    border:1px solid var(--line); border-radius:16px;
+    background:linear-gradient(180deg,#121b28,#0b111a); box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .card .label{margin-bottom:14px}
+  .card h2{font-family:var(--display); font-weight:600; font-size:1.5rem; margin:0 0 14px; color:#f2ecdf}
+  .card p{color:var(--ink-soft); font-size:.98rem; line-height:1.65; margin:0 0 12px}
+  .card .actions{margin-top:22px; display:flex; flex-direction:column; gap:12px}
+  .card .btn{width:100%}
+  body.locked{overflow:hidden}
+  @media (max-width:600px){
+    .wrap{padding:0 18px 70px}
+    .hero{padding:40px 0 6px}
+    .scene{font-size:1.12rem; line-height:1.82}
+    .brand small{display:none}
+    .cta{padding:28px 18px}
+  }
+</style>
+</head>
+<body class="locked">
+  <div class="gate" id="gate">
+    <div class="card">
+      <div class="label">Marblemount &middot; Book Four</div>
+      <h2>Cold Open</h2>
+      <p>This is an excerpt from <em>Cold Open</em>, small-town romantic suspense for adult readers. This scene is explicit and open-door.</p>
+      <p>Like the whole series, the book follows a woman rebuilding her life after an abusive relationship. That history is referred to but never shown for entertainment.</p>
+      <p><strong style="color:var(--ink)">You must be 18 or older to read on.</strong></p>
+      <div class="actions">
+        <button class="btn" id="enter">I am 18 or older. Read the scene.</button>
+        <a class="btn ghost" href="https://www.amazon.com/dp/B0H4X1PX34">Start the series with Book 1</a>
+      </div>
+    </div>
+  </div>
+  <div class="topbar">
+    <div class="brand">Cold Open<small>Book Four &middot; coming soon</small></div>
+    <a class="btn small" href="https://www.amazon.com/dp/B0H4X1PX34">Book 1 free in Kindle Unlimited</a>
+  </div>
+  <div class="wrap">
+    <div class="hero">
+      <div class="label">Marblemount &middot; Book Four</div>
+      <h1>Cold Open</h1>
+      <p class="tag">She has a word for everyone. She has none for him.</p>
+      <div class="chapter">An excerpt &middot; Chapter Sixteen</div>
+    </div>
+    <div class="rule"></div>
+    <p class="setup">Tessa notices everything and says everything, and keeps every true thing behind the talk. Jack is the one man in Marblemount she cannot read. A week into something neither of them will name, he sets out to take the one thing she never gives.</p>
+    <div class="dot">&bull;</div>
+    <div class="scene">
+        <p class="first">It had stopped being a play, and that was the part that should have frightened him more than it did.</p>
+        <p>A week into it, he could no longer locate the moment management had become something else. There had been a version of this, early, that he could have defended to Wade with a straight face: stay close to the threat, keep her where you can read her, a chief doing the hard necessary thing. He had told himself that version for about four days. Then one night she had fallen asleep against him mid-sentence, in the middle of an argument about a book, her clever mouth finally still and her hand open on his chest, and he had lain awake under the weight of her and understood that there was no version left in which he was managing anything. He was just a man who drove up a dark road every night because the woman at the end of it had become the place he lived.</p>
+        <p>Tonight she let him in and kissed him before he had the door shut, and there was none of the negotiation of the first time, none of the long verbal circling two talkers did to keep from being touched. They knew each other now. That was the new thing and it changed everything, because the not-knowing had been half of what protected them, and now it was gone. She knew how he kissed and he knew the sound she made when he got his hand in her hair and tipped her head back, and there was a terrible efficiency to it now, a couple who had learned the shortest route to the place where the words stopped and were taking it without apology.</p>
+        <p>He got her sweater off in the front room and put his mouth to the warm line of her throat and felt her breath go, and she said, not a tease this time, just true, “I thought about this all day. I couldn’t work. You’ve ruined me, I hope you know,” and the plainness of it, the admission from a woman who admitted nothing, went through him like current. He walked her backward toward the bed without breaking from her, both of them shedding the day’s clothes between the door and the mattress. He was already past speech, already gone into the want that had been sitting under his whole compromised week. When the backs of her knees hit the bed and she pulled him down with her he went, gladly, all of that held-back weight, into the one place he had stopped being able to pretend he could do without.</p>
+        <p>She got her hands on him and he heard himself make a sound he did not make in front of people, and she told him so, low and wicked against his mouth, talking through it the way she talked through everything, because words were the last thing she ever put down. He had worked that out about her in a week. So he knew exactly what he was going to take from her, and it was not going to be her body, which she gave easily, it was going to be her words, which she never gave at all. He let her have her commentary a while. He let her talk, let her stay in charge of the language of it, the way you let someone keep a thing right up until you take it. He lay back and let the woman who read everyone read this, read him by touch, find the places that undid him and return to them. The surrender of it, the chief of the valley laid out under her clever hands with no answer for any of it, was its own kind of heat. Sharper than the first time, because this time he knew exactly what he was giving her and gave it anyway.</p>
+        <p>Then he turned them, because he wanted to be the one doing the reading, and she let him, which from her was the thing that always undid him worst, the steering woman letting herself be moved. He took his time. He had learned her in one night and spent a week wanting to study the rest, and now he did. He kissed down her body unhurried, talking the whole way, low filthy precise sentences against her skin, telling her what he’d wanted to do to her since the first morning in the diner and exactly how he meant to do it now, and he felt every sentence land in the catch of her breath. He put his mouth where she most wanted it and pushed two fingers deep into her, slow, curling them, while his tongue worked her clit, and he settled in to do the one thing he wanted more than his next breath, which was to take her apart until her cleverness gave out entirely. She kept talking at first. Of course she did. Half-formed things, breathless and pleased, a woman putting words to her own undoing because the running talk was the wall she lived behind. He worked her through it, patient and relentless, his tongue and his fingers giving her exactly what the grip of her hand in his hair told him she wanted, and he felt the words start to dissolve in her mouth. The clever ones went first. Then the whole sentences. Then she was down to his name and a broken string of please and a sound with no language in it at all, her thighs clamped at his ears and her hips chasing his mouth with no wit left anywhere in her.</p>
+        <p>“Jack.” Just his name, low, an instruction and a plea folded into the one word, her hips lifting toward him, done with the slow part.</p>
+        <p>“I know,” he said, against her. “I’ve got you.”</p>
+        <p>He pushed into her slow and deep, all the way, and felt the long shudder go through her as he filled her, the last of the cleverness going out of her on a breath, and they both went still at the joining, at a thing almost too much to bear. For a moment neither of them moved. He held there, deep and unmoving, her body gripping him, the heat of her closing him in. It was the closest he had been to another human being in more years than he wanted to count. He felt her feel it too, felt the wryness she armored everything in go out of her all at once, leaving just Tessa, holding onto him like he was something she had not expected to be allowed.</p>
+        <p>“Hi,” she said, absurdly, helplessly, and he understood it, the way you say hello to a person you have somehow already missed while they were in your arms, and he said it back, “hi,” and something in both of them broke open on the smallness of it. Then she rolled her hips up against him, and there was no more stillness anywhere.</p>
+        <p>He pushed back up over her and slid into her again, slow, and her breath caught the way it had under his mouth. He found the rhythm that made her breath catch on the way in and break on the way out, and held it, and felt her start to climb. When her hands pulled at his hips for more he gave her more. When she tilted under him, chasing the angle, he shifted with her until he hit the place that made the sound jump out of her, and stayed there, working into it, while she unspooled by degrees beneath him. She stopped being able to be clever. She stopped being able to talk at all. The cleverest woman he knew was reduced to her nails dug into his back and her breath wrecked against his jaw and the plain animal honesty of her body lifting to meet every stroke, the half-words gone down to <em>yes</em> and <em>there</em> and his name said like it was the only word she had left. The bed knocked the wall. Neither of them cared. He braced one forearm by her head and drove into her the way her whole body was begging for, hard and steady and unrelenting, and would not let up, and felt her tighten around him, closer, closer, right at the edge of it.</p>
+        <p>And then he did the thing that undid her past anything his hands had done. He gave her the words back and asked for the true one. “Tell me,” he said, against her ear, not slowing, his voice wrecked and certain. “Not the clever thing. The real one. I want to hear you say it.” He felt her flinch from it, the woman who would give a man her body all night before she would give him one undefended sentence, felt her reach for a wry deflection and find she could not hold it, not at this pace, not this far past the wall. “Say it,” he said again, gentler, relentless. And she said it. Not wry, not armored, not a word she could take back in the morning by pretending it had been a joke. She said, broken and plain and looking right at him, <em>I don’t want to leave, I don’t want this to be a story, I want it to be mine,</em> and saying it out loud, choosing to, was what sent her over.</p>
+        <p>It took her on the last word of it, her spine drawing taut and a long cry breaking out of her with no cleverness left in it at all, the true sentence still in the air where she had finally set it down. He felt every bit of it move through her, felt her grip him and hold on, and it was that, the sound of her undone by what she had just dared to say out loud, that finished him. He thrust in deep and held, his face turned into her hair, and let go of everything he had spent eleven years holding back, spilling all of it at last into the one woman who could end him, while she kept hold of him and said nothing, because for once she had nothing she needed to say, and did not reach for anything.</p>
+        <p>After, they lay tangled and breathing in the dark, and for a while it was simple. She made a contented wordless sound and arranged herself against him with her head under his jaw. He pulled the blanket up over them both and kept his arm around her. The river went on outside and the heater ticked, and a man who had spent eleven years keeping watch at the edge of his own life lay for a few minutes fully inside it, stupid with how good it was. She told him a small terrible joke about the motel art. He laughed, surprised, into her hair. She laughed because he had. It was, he thought, the most ordinary he had felt in years, and the most happy, and he wanted to stay in the exact center of that minute and never let the rest of it back in.</p>
+        <p>Then, with her heart slowing against his and his hand moving idle over the curve of her hip because he could not make himself stop touching her, the rest of it came back in, and he almost told her.</p>
+    </div>
+    <div class="cta">
+      <div class="label">Coming soon</div>
+      <h2>Keep reading</h2>
+      <p>Cold Open, Book Four of the Marblemount series, is releasing soon. The story starts with <em>One Floor Up</em>, available now and free in Kindle Unlimited. Start there and read your way here.</p>
+      <a class="btn" href="https://www.amazon.com/dp/B0H4X1PX34">Start with Book 1, free in Kindle Unlimited &rarr;</a>
+      <div class="series"><b>The Marblemount series.</b> Slow burn &middot; Open door &middot; Small-town romantic suspense</div>
+      <p class="next"><a href="./" style="color:var(--amber);text-decoration:underline;text-underline-offset:3px">See the whole series &rarr;</a></p>
+    </div>
+  </div>
+  <footer>Della Larkin &middot; Cold Open</footer>
+<script>
+  (function(){
+    var gate=document.getElementById('gate'), enter=document.getElementById('enter'), body=document.body;
+    enter.addEventListener('click',function(){
+      gate.classList.add('hidden'); body.classList.remove('locked');
+      window.scrollTo(0,0);
+    });
+  })();
+</script>
+  <script data-goatcounter="https://dellalarkin.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script>
+    (function(){
+      function track(n){ if(window.goatcounter && window.goatcounter.count){ window.goatcounter.count({path:n, title:n, event:true}); } }
+      document.addEventListener('click', function(e){
+        if(e.target.closest('#enter')) track('gate-enter-b4');
+        var a=e.target.closest('a'); if(a && (a.getAttribute('href')||'').indexOf('amazon.')>-1) track('ku-click-b4');
+      });
+    })();
+  </script>
+</body>
+</html>
